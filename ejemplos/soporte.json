@@ -1,0 +1,15 @@
+{
+  "descripcion": "Soporte en L de aluminio con inserto de cobre y canal de agua. La base toca una pieza a 90 °C; un sensor en el tope inyecta 5 kW/m².",
+  "malla": "soporte.msh",
+  "materiales": {
+    "aluminio": {"k": 205},
+    "cobre":    {"k": 400}
+  },
+  "fronteras": {
+    "base":    {"tipo": "dirichlet", "T": 90},
+    "canal":   {"tipo": "robin", "h": 2000, "T_inf": 20},
+    "aire":    {"tipo": "robin", "h": 10, "T_inf": 25},
+    "tope":    {"tipo": "neumann", "flujo": 5000},
+    "extremo": {"tipo": "neumann", "flujo": 0}
+  }
+}

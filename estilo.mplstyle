@@ -1,0 +1,15 @@
+# Estilo común para todas las figuras del informe.
+# Generar cada figura con figsize igual a su tamaño real en la página
+# e incluirla en LaTeX con ese mismo ancho (p. ej. width=\textwidth ≈ 6.3 in).
+font.size: 10
+axes.titlesize: 10
+axes.labelsize: 10
+legend.fontsize: 9
+xtick.labelsize: 9
+ytick.labelsize: 9
+figure.dpi: 150
+savefig.bbox: tight
+savefig.format: pdf
+axes.grid: False
+image.cmap: inferno
+lines.markersize: 5

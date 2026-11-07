@@ -1,0 +1,14 @@
+Solución manufacturada
+  T1(x,y) = (x**2 + 1)*(sin(pi*y) + 2)
+  T2(x,y) = (sin(pi*y) + 2)*(x/4 - cos(pi*(2*x - 1))/2 + 13/8)
+  saltos en la interfaz: [T] = 0, [k dT/dx] = 0
+
+Convergencia en mallas no estructuradas (orden esperado en L2: 2)
+    nodos        h    error L2  orden   error max  orden
+      150   0.1200   2.770e-02      -   9.895e-02      -
+      511   0.0634   8.297e-03   1.89   3.627e-02   1.57
+     1870   0.0344   2.106e-03   2.25   9.204e-03   2.25
+     7149   0.0167   5.242e-04   1.91   2.128e-03   2.02
+    28019   0.0085   1.333e-04   2.04   5.252e-04   2.09
+
+Figuras y tabla en /home/claude/proyecto/resultados

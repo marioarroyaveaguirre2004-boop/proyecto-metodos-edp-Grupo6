@@ -1,0 +1,33 @@
+PASO 1. Solucion analítica
+  T_exacta(x,y) = x*y**2 + sin(pi*x)*cos(pi*y/2) + 1
+  q(x,y)        = -4.0*x + 2.5*pi**2*sin(pi*x)*cos(pi*y/2)
+  T_inf en Γ1   = x*y**2 - 0.8*x*y + 0.2*pi*sin(pi*x)*sin(pi*y/2) + sin(pi*x)*cos(pi*y/2) + 1
+  T_inf en Γ2   = x*y**2 + 0.4*y**2 + sin(pi*x)*cos(pi*y/2) + 0.4*pi*cos(pi*x)*cos(pi*y/2) + 1
+  T_inf en Γ3   = x*y**2 + 0.8*x*y - 0.2*pi*sin(pi*x)*sin(pi*y/2) + sin(pi*x)*cos(pi*y/2) + 1
+  T_inf en Γ4   = x*y**2 - 0.4*y**2 + sin(pi*x)*cos(pi*y/2) - 0.4*pi*cos(pi*x)*cos(pi*y/2) + 1
+  residuo de la EDP = 0,  residuo de Robin en Γ1..Γ4 = [0, 0, 0, 0]
+
+FEM vs analítica en ciertos puntos (malla 32x32)
+          (x, y)  T analítica        T FEM      error
+  (0.50, 0.50)       1.832107     1.831187  -9.20e-04
+  (0.25, 0.75)       1.411223     1.410511  -7.12e-04
+  (0.75, 0.25)       1.700156     1.699456  -7.01e-04
+  (0.00, 0.00)       1.000000     1.000128   1.28e-04
+  (1.00, 1.00)       2.000000     1.996025  -3.97e-03
+  error máximo en los nodos = 3.97e-03
+  error en norma L2         = 6.62e-04
+
+PASO 4. Convergencia al refinar la malla (orden esperado en L2: 2)
+    malla        h    error L2  orden   error max  orden
+    4x4     0.2500   3.827e-02      -   8.512e-02      -
+    8x8     0.1250   1.032e-02   1.89   3.443e-02   1.31
+   16x16    0.0625   2.635e-03   1.97   1.213e-02   1.50
+   32x32    0.0312   6.624e-04   1.99   3.975e-03   1.61
+   64x64    0.0156   1.658e-04   2.00   1.241e-03   1.68
+
+PASO 5. NORTA, p = 0.3, ℓ = 3 mm, 200000 muestras
+  P(A_i = 1) estimada: [0.3   0.3   0.301 0.301 0.302 0.3   0.299 0.301 0.299]
+  corr(A_1, A_2) vecinos a 3 mm    = 0.226
+  corr(A_1, A_9) esquinas opuestas = 0.034
+
+Figuras guardadas en /home/claude/proyecto/resultados
