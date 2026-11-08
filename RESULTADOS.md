@@ -81,6 +81,8 @@ En los dos últimos, h_sup = 0.5·h̄ + c·(densidad de potencia), con c elegido
 3. **El ranking depende de la carga** (`fig_pfalla_p`). Con carga baja (factor f < 0.6), el diseño
    "según potencia media" es **peor que el uniforme**; con carga alta es mejor. El mejor diseño
    depende del uso esperado del chip.
+   Nota: en el barrido las probabilidades se truncan como p_i' = min(f·p_i, 0.99); la caché
+   se satura desde f ≈ 1.41 y la memoria desde f = 1.65 (zona sombreada de la figura).
 
 4. **La correlación afecta de forma distinta a cada diseño** (`fig_pfalla_ell`, la figura central):
    - Con el diseño pico, la falla es rara y requiere muchos bloques encendidos a la vez. La

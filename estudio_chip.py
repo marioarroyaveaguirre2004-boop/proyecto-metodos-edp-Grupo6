@@ -346,7 +346,11 @@ fig.savefig(SALIDA / "fig_pfalla_ell.pdf"); fig.savefig(SALIDA / "fig_pfalla_ell
 fig, ax = plt.subplots(figsize=(4.2, 3.0))
 for d in DISENOS:
     ax.plot(barr_p[d][:, 0], barr_p[d][:, 1], "o-", ms=3, color=COLORES[d], label=DISENOS[d])
-ax.set(xlabel=r"factor de carga $f$  ($p_i \to f\,p_i$)", ylabel=r"$P_{falla}$")
+ax.set(xlabel=r"factor de carga $f$  ($p_i \to \min(f\,p_i,\ 0.99)$)", ylabel=r"$P_{falla}$")
+f_sat = (0.99 / PBASE).min()                      # primer bloque que se satura
+if f_sat < FACTORES.max():
+    ax.axvspan(f_sat, FACTORES.max() + 0.05, color="0.85", alpha=0.5, lw=0)
+    ax.text(f_sat + 0.02, 0.02, "con\ntruncamiento", fontsize=7, color="0.35", va="bottom")
 ax.grid(True, alpha=0.3); ax.legend(title=rf"$\ell$ = {PAR['ell']*1e3:.0f} mm", fontsize=8)
 fig.savefig(SALIDA / "fig_pfalla_p.pdf")
 

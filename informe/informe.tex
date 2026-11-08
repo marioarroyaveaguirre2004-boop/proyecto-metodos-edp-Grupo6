@@ -666,7 +666,7 @@ tiempo.
   \label{fig:cdf}
 \end{subfigure}
 \caption{(a) $\Pf$ cuando todas las probabilidades de activación se escalan por un factor
-de carga $f$ ($p_i\to f\,p_i$). (b) Función de distribución acumulada de la temperatura
+de carga $f$, con $p_i\to\min(f\,p_i,\ \num{0.99})$. La zona sombreada ($f>\num{1.41}$) indica que alguna probabilidad está truncada. (b) Función de distribución acumulada de la temperatura
 máxima para $f=1$; la línea discontinua es $\Tc$.}
 \label{fig:carga-cdf}
 \end{figure}
@@ -674,7 +674,20 @@ máxima para $f=1$; la línea discontinua es $\Tc$.}
 \subsection{Sensibilidad al nivel de carga y distribución de la temperatura máxima}
 
 La Figura~\ref{fig:carga} escala todas las probabilidades de activación por un factor
-$f$, que representa usos más livianos ($f<1$) o más intensos ($f>1$) del chip. El diseño
+$f$, que representa usos más livianos ($f<1$) o más intensos ($f>1$) del chip. Como una
+probabilidad no puede superar 1, las probabilidades escaladas se truncan:
+\begin{equation}
+  p_i' = \min\!\left(f\,p_i,\ \num{0.99}\right).
+  \label{eq:truncamiento}
+\end{equation}
+El tope es \num{0.99} y no 1 porque con $p_i'=1$ el umbral de \eqref{eq:norta} sería
+$c_i=\Phi^{-1}(0)=-\infty$: el bloque dejaría de ser aleatorio y las probabilidades de los
+ortantes quedarían mal definidas. En el rango estudiado ($f\le\num{1.8}$) el truncamiento
+solo afecta a dos bloques: la caché L3 ($p=\num{0.7}$), que se satura a partir de
+$f\approx\num{1.41}$, y el controlador de memoria ($p=\num{0.6}$), a partir de
+$f=\num{1.65}$. Los núcleos, la GPU y la E/S nunca se saturan. Por tanto, para $f>\num{1.41}$
+el escalamiento deja de ser uniforme y la parte derecha de la figura debe leerse con esa
+salvedad; las conclusiones se apoyan en el rango $f\le\num{1.4}$, donde no hay truncamiento. El diseño
 según potencia pico es el mejor en todo el rango, pero el orden entre los otros dos no es
 fijo: con carga baja ($f\lesssim\num{0.55}$), el diseño según potencia media es
 \emph{peor} que el uniforme, y con carga alta es mejor. Esto refuerza la idea central del
