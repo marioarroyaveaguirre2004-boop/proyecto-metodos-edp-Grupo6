@@ -42,4 +42,4 @@ Convergencia en malla (p, ℓ de referencia):
    100x100          114.134  0.4492          117.647  0.7908          104.685  0.1681          104.685  0.1681
    200x200          114.134  0.4492          117.676  0.7908          104.681  0.1681          104.681  0.1681
 
-Listo en 116 s. Figuras y resumen.json en /home/claude/proyecto/resultados/chip_rejilla
+Listo en 116 s. 
