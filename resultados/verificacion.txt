@@ -30,4 +30,4 @@ PASO 5. NORTA, p = 0.3, ℓ = 3 mm, 200000 muestras
   corr(A_1, A_2) vecinos a 3 mm    = 0.226
   corr(A_1, A_9) esquinas opuestas = 0.034
 
-
+Figuras guardadas en resultados/

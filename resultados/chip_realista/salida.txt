@@ -42,4 +42,4 @@ Convergencia en malla (p, ℓ de referencia):
    100x100          111.889  0.4509          131.580  0.7548          106.142  0.2949          100.454  0.0415
    200x200          111.889  0.4509          131.596  0.7548          106.141  0.2949          100.451  0.0415
 
-Listo en 56 s. Figuras y resumen.json en /home/claude/proyecto/resultados/chip_realista
+Listo en 56 s. Figuras y resumen.json en resultados/chip_realista/

@@ -9,6 +9,7 @@ disipador con la misma capacidad total de enfriamiento.
 
 - **Informe:** [`informe/informe.pdf`](informe/informe.pdf) (fuente LaTeX en `informe/`)
 - **Resultados e interpretación:** [`RESULTADOS.md`](RESULTADOS.md)
+- **Uso de inteligencia artificial:** [`USO_DE_IA.md`](USO_DE_IA.md)
 
 Solver de elementos finitos P1, escrito desde cero, para
 

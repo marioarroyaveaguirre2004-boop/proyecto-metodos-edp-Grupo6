@@ -11,4 +11,4 @@ Convergencia en mallas no estructuradas (orden esperado en L2: 2)
      7149   0.0167   5.242e-04   1.91   2.128e-03   2.02
     28019   0.0085   1.333e-04   2.04   5.252e-04   2.09
 
-Figuras y tabla en /home/claude/proyecto/resultados
+Figuras y tabla en resultados/
